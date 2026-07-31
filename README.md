@@ -30,7 +30,7 @@ Here are a few highlights of what I've been working on:
 | Project Name | Description | Tech Stack | Live Demo |
 | :--- | :--- | :--- | :--- |
 | **AlgoMage Commerce** | Full-stack e-commerce app with cart and checkout workflows. | Node.js, Express, MongoDB | [Live Demo](https://fiseha09.github.io/AlgoMage-Commerce/) |
-| **Portfolio Website** | My personal website showcasing my skills and journey. | HTML, CSS, JavaScript | [Live Demo](#) |
+| **Portfolio Website** | My personal website showcasing my skills and journey. | HTML, CSS, JavaScript | [Live Demo](https://fiseha09.github.io/portfolio/) |
 | **prexam-elite website** | Full-stack educational website all university fresh man resourses and checkout workflows. | Node.js, Express, MongoDB | [Live Demo](https://algo-mage-academics.vercel.app/) |
 
 
