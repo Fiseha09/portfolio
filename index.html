@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AlgoMage – Portfolio of Fiseha Belete, developer and tech entrepreneur." />
+  <title>AlgoMage | Fiseha Belete</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Apply saved theme before CSS renders to prevent flash -->
+  <script>
+    (function(){
+      var t = localStorage.getItem('algomage-theme') ||
+              (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="nav__logo">
+        <span class="nav__logo-bracket">&lt;</span>AlgoMage<span class="nav__logo-bracket">/&gt;</span>
+      </a>
+      <div class="nav__controls">
+        <!-- Theme toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" title="Toggle theme">
+          <!-- Moon icon (shown in dark mode) -->
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <!-- Sun icon (shown in light mode) -->
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1"  x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22"  x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1"  y1="12" x2="3"  y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64"  x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+        <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#home"     class="nav__link">Home</a></li>
+        <li><a href="#about"    class="nav__link">About</a></li>
+        <li><a href="#certs"    class="nav__link">Achievements</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#contact"  class="nav__link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="hero" id="home">
+      <div class="hero__left">
+
+        <!-- Circular profile avatar at top of hero -->
+        <div class="hero__avatar">
+          <!--
+            PROFILE PHOTO — set src to your image file
+            e.g. src="images/fiseha-profile.jpg"
+          -->
+          <img
+            src="fish-profile.jpg"
+            alt="Fiseha Belete"
+            class="hero__avatar-img"
+            id="heroAvatarImg"
+            width="88"
+            height="88"
+            loading="eager"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          />
+          <!-- Fallback initials shown when src is blank or broken -->
+          <div class="hero__avatar-fallback" aria-hidden="true">FB</div>
+          <span class="hero__avatar-ring"></span>
+        </div>
+
+        <div class="hero__tag">Developer &amp; Tech Entrepreneur</div>
+        <h1 class="hero__name">Fiseha<br /><span class="hero__name--accent">Belete</span></h1>
+        <p class="hero__alias">
+          <span class="hero__alias-symbol">$</span>
+          <span class="hero__alias-text" id="typedAlias"></span>
+          <span class="hero__cursor">|</span>
+        </p>
+        <p class="hero__tagline">
+          Engineering elegant systems.<br />Building businesses that matter.
+        </p>
+        <div class="hero__cta-group">
+          <a href="#projects" class="btn btn--primary">View Projects</a>
+          <a href="#contact"  class="btn btn--ghost">Get In Touch</a>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__stat"><span class="hero__stat-num">2+</span><span class="hero__stat-label">Years Building</span></div>
+          <div class="hero__stat"><span class="hero__stat-num">2</span><span class="hero__stat-label">Live Platforms</span></div>
+          <div class="hero__stat"><span class="hero__stat-num">∞</span><span class="hero__stat-label">Problems to Solve</span></div>
+        </div>
+      </div>
+      <div class="hero__right">
+        <div class="hero__code-window">
+          <div class="hero__code-bar">
+            <span class="dot dot--red"></span>
+            <span class="dot dot--yellow"></span>
+            <span class="dot dot--green"></span>
+            <span class="hero__code-filename">algomage.js</span>
+          </div>
+          <pre class="hero__code"><code><span class="c-kw">const</span> <span class="c-var">AlgoMage</span> <span class="c-op">=</span> {
+  <span class="c-prop">name</span><span class="c-op">:</span>    <span class="c-str">"Fiseha Belete"</span>,
+  <span class="c-prop">focus</span><span class="c-op">:</span>   <span class="c-str">"Full-Stack Dev"</span>,
+  <span class="c-prop">mission</span><span class="c-op">:</span> <span class="c-str">"Build & Scale"</span>,
+  <span class="c-prop">stack</span><span class="c-op">:</span>   [<span class="c-str">"C++"</span>, <span class="c-str">"JS"</span>, <span class="c-str">"HTML5"</span>, <span class="c-str">"CSS3"</span>],
+
+  <span class="c-fn">build</span>() {
+    <span class="c-kw">return</span> <span class="c-kw">this</span>.<span class="c-prop">mission</span>
+      .<span class="c-fn">split</span>(<span class="c-str">" & "</span>)
+      .<span class="c-fn">map</span>(<span class="c-var">goal</span> <span class="c-op">=&gt;</span> <span class="c-fn">execute</span>(<span class="c-var">goal</span>));
+  }
+};</code></pre>
+        </div>
+        <div class="hero__glow"></div>
+      </div>
+      <div class="hero__scroll-hint">
+        <span>scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ── ABOUT ── -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">01 / about</span>
+          <h2 class="section-title">The Mind Behind <span class="accent">AlgoMage</span></h2>
+        </div>
+
+        <div class="about__grid">
+          <!-- Profile Photo Block -->
+          <div class="about__photo-col">
+            <div class="about__photo-frame">
+              <!--
+                ══════════════════════════════════════════════
+                PROFILE PHOTO — replace src with your image path
+                Example: src="images/fiseha-profile.jpg"
+                Recommended size: 560 × 750 px (3:4 ratio)
+                ══════════════════════════════════════════════
+              -->
+              <img
+                src="file_00000000133481f488c66c94e54de69d.png"
+                alt="Fiseha Belete — Official Profile Photo"
+                class="about__profile-img"
+                id="profilePhoto"
+                width="280"
+                height="373"
+                loading="lazy"
+                onerror="this.style.display='none'; document.getElementById('profilePhotoFallback').style.display='flex';"
+              />
+              <!-- Fallback shown when src is empty or image fails to load -->
+              <div class="about__photo-placeholder" id="profilePhotoFallback">
+                <div class="about__photo-icon">
+                  <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="40" cy="28" r="16" stroke="currentColor" stroke-width="2"/>
+                    <path d="M10 72c0-16.569 13.431-30 30-30s30 13.431 30 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <p class="about__photo-label">Fiseha Belete</p>
+                <p class="about__photo-sublabel">Official Profile Photo</p>
+              </div>
+              <div class="about__photo-corner about__photo-corner--tl"></div>
+              <div class="about__photo-corner about__photo-corner--tr"></div>
+              <div class="about__photo-corner about__photo-corner--bl"></div>
+              <div class="about__photo-corner about__photo-corner--br"></div>
+            </div>
+            <div class="about__photo-badge">AlgoMage</div>
+          </div>
+
+          <!-- Bio Block -->
+          <div class="about__bio-col">
+            <div class="about__bio-card">
+              <h3 class="about__bio-heading">Conceptual Thinker. System Builder.</h3>
+              <p class="about__bio-text">
+                I am driven by a deep passion for mathematics and analytical reasoning — not the kind that stops at formulas, but the kind that breaks down the "why" behind every system. I learn by understanding first principles, not by memorizing procedures.
+              </p>
+              <p class="about__bio-text">
+                My goal has never been a job. It has always been to build technology-driven businesses that solve real problems and create opportunities for others. AlgoMage is that vision — a professional identity built for shipping products, not shipping resumes.
+              </p>
+              <div class="about__traits">
+                <div class="about__trait"><span class="about__trait-icon">⧖</span><span>First-principles thinking</span></div>
+                <div class="about__trait"><span class="about__trait-icon">◈</span><span>Entrepreneurial mindset</span></div>
+                <div class="about__trait"><span class="about__trait-icon">⬡</span><span>Mathematical precision</span></div>
+                <div class="about__trait"><span class="about__trait-icon">▲</span><span>Impact-driven building</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECH STACK ── -->
+    <section class="skills" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">02 / stack</span>
+          <h2 class="section-title">Tech <span class="accent">Arsenal</span></h2>
+        </div>
+        <div class="skills__grid">
+
+          <div class="skill-card" data-skill="cpp">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <text x="4" y="36" font-size="28" font-weight="700" fill="currentColor">C++</text>
+              </svg>
+            </div>
+            <h3 class="skill-card__name">C++</h3>
+            <p class="skill-card__desc">Systems programming, algorithmic problem solving, and performance-critical applications.</p>
+            <div class="skill-card__bar"><div class="skill-card__fill" style="--fill:80%"></div></div>
+          </div>
+
+          <div class="skill-card" data-skill="html">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <text x="0" y="36" font-size="22" font-weight="700" fill="currentColor">HTML5</text>
+              </svg>
+            </div>
+            <h3 class="skill-card__name">HTML5</h3>
+            <p class="skill-card__desc">Semantic, accessible markup with structured layouts and modern web standards.</p>
+            <div class="skill-card__bar"><div class="skill-card__fill" style="--fill:90%"></div></div>
+          </div>
+
+          <div class="skill-card" data-skill="css">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <text x="0" y="36" font-size="22" font-weight="700" fill="currentColor">CSS3</text>
+              </svg>
+            </div>
+            <h3 class="skill-card__name">CSS3</h3>
+            <p class="skill-card__desc">Custom responsive layouts, animations, grid & flexbox — zero framework dependency.</p>
+            <div class="skill-card__bar"><div class="skill-card__fill" style="--fill:88%"></div></div>
+          </div>
+
+          <div class="skill-card" data-skill="js">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <text x="2" y="36" font-size="24" font-weight="700" fill="currentColor">JS</text>
+              </svg>
+            </div>
+            <h3 class="skill-card__name">JavaScript</h3>
+            <p class="skill-card__desc">Dynamic UI components, DOM manipulation, event-driven logic, and async operations.</p>
+            <div class="skill-card__bar"><div class="skill-card__fill" style="--fill:85%"></div></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CERTIFICATIONS & ACHIEVEMENTS ── -->
+    <section class="certs" id="certs">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">02.5 / achievements</span>
+          <h2 class="section-title">Certifications &amp; <span class="accent">Achievements</span></h2>
+        </div>
+
+        <!-- Entrance Exam Feature Card -->
+        <div class="cert-feature">
+          <div class="cert-feature__glow"></div>
+          <div class="cert-feature__left">
+            <span class="cert-feature__eyebrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              Top Academic Result
+            </span>
+            <h3 class="cert-feature__score">
+              <span class="cert-feature__num">472.91</span>
+              <span class="cert-feature__denom">/ 600</span>
+            </h3>
+            <p class="cert-feature__title">Ethiopian University Entrance Examination</p>
+            <p class="cert-feature__desc">
+              Achieved a highly competitive entrance exam score demonstrating exceptional analytical reasoning, mathematical proficiency, and academic excellence — reflecting the same first-principles approach applied to every engineering challenge.
+            </p>
+
+            <!-- Subject breakdown bars -->
+            <div class="exam-breakdown">
+              <div class="exam-subject">
+                <div class="exam-subject__label">
+                  <span class="exam-subject__name">Mathematics</span>
+                  <span class="exam-subject__score">91.67</span>
+                </div>
+                <div class="exam-subject__bar">
+                  <div class="exam-subject__fill" style="--pct:76.39%" data-score="91.67"></div>
+                </div>
+              </div>
+              <div class="exam-subject">
+                <div class="exam-subject__label">
+                  <span class="exam-subject__name">Chemistry</span>
+                  <span class="exam-subject__score">91.25</span>
+                </div>
+                <div class="exam-subject__bar">
+                  <div class="exam-subject__fill" style="--pct:76.04%" data-score="91.25"></div>
+                </div>
+              </div>
+              <div class="exam-subject">
+                <div class="exam-subject__label">
+                  <span class="exam-subject__name">Physics</span>
+                  <span class="exam-subject__score">81.67</span>
+                </div>
+                <div class="exam-subject__bar">
+                  <div class="exam-subject__fill" style="--pct:68.06%" data-score="81.67"></div>
+                </div>
+              </div>
+              <div class="exam-subject">
+                <div class="exam-subject__label">
+                  <span class="exam-subject__name">Biology</span>
+                  <span class="exam-subject__score">76.00</span>
+                </div>
+                <div class="exam-subject__bar">
+                  <div class="exam-subject__fill" style="--pct:63.33%" data-score="76.00"></div>
+                </div>
+              </div>
+              <div class="exam-subject">
+                <div class="exam-subject__label">
+                  <span class="exam-subject__name">English</span>
+                  <span class="exam-subject__score">73.00</span>
+                </div>
+                <div class="exam-subject__bar">
+                  <div class="exam-subject__fill" style="--pct:60.83%" data-score="73.00"></div>
+                </div>
+              </div>
+              <div class="exam-subject">
+                <div class="exam-subject__label">
+                  <span class="exam-subject__name">Aptitude</span>
+                  <span class="exam-subject__score">59.32</span>
+                </div>
+                <div class="exam-subject__bar">
+                  <div class="exam-subject__fill" style="--pct:49.43%" data-score="59.32"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cert-feature__right">
+            <div class="cert-feature__gauge" role="img" aria-label="Score 472.91 out of 600">
+              <svg class="gauge-svg" viewBox="0 0 200 200" aria-hidden="true">
+                <defs>
+                  <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"   stop-color="#f59e0b"/>
+                    <stop offset="100%" stop-color="#fbbf24"/>
+                  </linearGradient>
+                </defs>
+                <!-- Track -->
+                <circle class="gauge-track" cx="100" cy="100" r="80" fill="none" stroke-width="12"/>
+                <!-- Progress — dasharray 502.65 = 2πr, offset = track*(1-pct) -->
+                <circle class="gauge-fill" cx="100" cy="100" r="80" fill="none" stroke-width="12"
+                  stroke-dasharray="502.65"
+                  stroke-dashoffset="502.65"
+                  data-pct="0.7882"
+                  transform="rotate(-90 100 100)"/>
+              </svg>
+              <div class="gauge-label">
+                <span class="gauge-num" data-target="472.91">0</span>
+                <span class="gauge-sub">out of 600</span>
+              </div>
+            </div>
+            <div class="cert-feature__percentile">
+              <span class="cert-feature__pct-num">78.8<span class="cert-feature__pct-sym">%</span></span>
+              <span class="cert-feature__pct-label">Score Ratio</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Ethio Coder Certificate Cards — PDF Embed Edition -->
+        <div class="cert-grid">
+
+          <!-- CERT 1 — Programming Fundamentals -->
+          <div class="cert-card">
+            <div class="cert-card__header">
+              <div class="cert-card__logo">
+                <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                  <rect width="32" height="32" rx="8" fill="currentColor" opacity="0.12"/>
+                  <path d="M10 20l4-8 4 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M11.5 17h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M20 12v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="cert-card__meta">
+                <p class="cert-card__issuer">Ethio Coder</p>
+                <span class="cert-card__badge">Certified</span>
+              </div>
+              <span class="cert-card__id">CERT-EC-001</span>
+            </div>
+
+            <h3 class="cert-card__name">Programming Fundamentals</h3>
+            <p class="cert-card__desc">Core skills in HTML5, CSS3 layout systems, and responsive web design principles for modern browsers.</p>
+
+            <!-- PDF Preview Embed -->
+            <div class="cert-card__preview">
+              <object
+                data="Learn the Latest Tech Skills; Advance Your Career _ Udacity.  programming .pdf"
+                type="application/pdf"
+                class="cert-card__pdf"
+                aria-label="Programming Fundamentals Certificate PDF">
+                <!-- Fallback when PDF can't render -->
+                <div class="cert-card__pdf-fallback">
+                  <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                    <rect x="8" y="4" width="32" height="40" rx="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M16 16h16M16 22h16M16 28h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M30 32l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <p>PDF Preview</p>
+                  <span>Place <code>certs/cert-web-dev.pdf</code></span>
+                </div>
+              </object>
+            </div>
+
+            <!-- 3-button action row -->
+            <div class="cert-card__actions">
+              <a href="Learn the Latest Tech Skills; Advance Your Career _ Udacity.  programming .pdf" target="_blank" rel="noopener" class="cert-btn cert-btn--verify">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Verify
+              </a>
+              <a href="Learn the Latest Tech Skills; Advance Your Career _ Udacity.  programming .pdf" target="_blank" rel="noopener" class="cert-btn cert-btn--view">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                
+              </a>
+              <a href="Learn the Latest Tech Skills; Advance Your Career _ Udacity.  programming .pdf" download class="cert-btn cert-btn--download">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                
+              </a>
+            </div>
+          </div>
+
+          <!-- CERT 2 — AI Fundamentals -->
+          <div class="cert-card">
+            <div class="cert-card__header">
+              <div class="cert-card__logo">
+                <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                  <rect width="32" height="32" rx="8" fill="currentColor" opacity="0.12"/>
+                  <polyline points="8,18 13,13 17,17 24,10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="cert-card__meta">
+                <p class="cert-card__issuer">Ethio Coder</p>
+                <span class="cert-card__badge">Certified</span>
+              </div>
+              <span class="cert-card__id">CERT-EC-002</span>
+            </div>
+
+            <h3 class="cert-card__name">AI Fundamentals</h3>
+            <p class="cert-card__desc">Machine learning concepts, neural network basics, data processing, natural language processing, and AI model evaluation.</p>
+
+            <div class="cert-card__preview">
+              <object
+                data="AI.pdf"
+                type="application/pdf"
+                class="cert-card__pdf"
+                aria-label="AI Fundamentals Certificate PDF">
+                <div class="cert-card__pdf-fallback">
+                  <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                    <rect x="8" y="4" width="32" height="40" rx="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M16 16h16M16 22h16M16 28h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M30 32l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <p>PDF Preview</p>
+                  <span>Place <code>certs/AI fundamentals.pdf</code></span>
+                </div>
+              </object>
+            </div>
+
+            <div class="cert-card__actions">
+              <a href="https://confirm.udacity.com/lp/6fe45d85-1b02-46cd-9103-cff4c5e53551" target="_blank" rel="noopener" class="cert-btn cert-btn--verify">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Verify
+              </a>
+              <a href="AI.pdf" target="_blank" rel="noopener" class="cert-btn cert-btn--view">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                
+              </a>
+              <a href="AI.pdf" download class="cert-btn cert-btn--download">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                
+              </a>
+            </div>
+          </div>
+
+          <!-- Data science —Fundamentals -->
+          <div class="cert-card">
+            <div class="cert-card__header">
+              <div class="cert-card__logo">
+                <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                  <rect width="32" height="32" rx="8" fill="currentColor" opacity="0.12"/>
+                  <path d="M16 8l6 3v5c0 3.5-2.5 6-6 7-3.5-1-6-3.5-6-7v-5l6-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="cert-card__meta">
+                <p class="cert-card__issuer">Ethio Coder</p>
+                <span class="cert-card__badge">Certified</span>
+              </div>
+              <span class="cert-card__id">CERT-EC-003</span>
+            </div>
+
+            <h3 class="cert-card__name">Data Science</h3>
+            <p class="cert-card__desc">Data analysis, exploratory data visualization, statistical modeling, and actionable insight extraction from complex datasets.</p>
+
+            <div class="cert-card__preview">
+              <object
+                data="Data science.pdf"
+                type="application/pdf"
+                class="cert-card__pdf"
+                aria-label="Data Science Certificate PDF">
+                <div class="cert-card__pdf-fallback">
+                  <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                    <rect x="8" y="4" width="32" height="40" rx="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M16 16h16M16 22h16M16 28h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M30 32l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <p>PDF Preview</p>
+                  <span>Place <code>certs/cert-cpp.pdf</code></span>
+                </div>
+              </object>
+            </div>
+
+            <div class="cert-card__actions">
+              <a href="https://confirm.udacity.com/lp/ba8583f0-9edc-47bf-b819-04260c95669e" target="_blank" rel="noopener" class="cert-btn cert-btn--verify">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Verify
+              </a>
+              <a href="Data science.pdf" target="_blank" rel="noopener" class="cert-btn cert-btn--view">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                
+              </a>
+              <a href="Data science.pdf" download class="cert-btn cert-btn--download">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                
+              </a>
+            </div>
+          </div>
+
+          <!-- CERT 4 —Android Development -->
+          <div class="cert-card">
+            <div class="cert-card__header">
+              <div class="cert-card__logo">
+                <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                  <rect width="32" height="32" rx="8" fill="currentColor" opacity="0.12"/>
+                  <circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="2"/>
+                  <path d="M16 10V8M16 24v-2M10 16H8M24 16h-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="cert-card__meta">
+                <p class="cert-card__issuer">Ethio Coder</p>
+                <span class="cert-card__badge">Certified</span>
+              </div>
+              <span class="cert-card__id">CERT-EC-004</span>
+            </div>
+
+            <h3 class="cert-card__name">Android Development &amp; Applications</h3>
+            <p class="cert-card__desc">Mobile application architecture, Kotlin fundamentals, UI layout design with Jetpack Compose, state management, and API integration.</p>
+
+            <div class="cert-card__preview">
+              <object
+                data="android .pdf"
+                type="application/pdf"
+                class="cert-card__pdf"
+                aria-label="Problem Solving &amp; Algorithms Certificate PDF">
+                <div class="cert-card__pdf-fallback">
+                  <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                    <rect x="8" y="4" width="32" height="40" rx="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M16 16h16M16 22h16M16 28h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M30 32l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <p>PDF Preview</p>
+                  <span>Place <code>certs/cert-algorithms.pdf</code></span>
+                </div>
+              </object>
+            </div>
+
+            <div class="cert-card__actions">
+              <a href="https://confirm.udacity.com/lp/90a435d7-d6dd-4f90-9567-0ee0944d8751" target="_blank" rel="noopener" class="cert-btn cert-btn--verify">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Verify 
+              </a>
+              <a href="android .pdf" target="_blank" rel="noopener" class="cert-btn cert-btn--view">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                
+              </a>
+              <a href="android .pdf" download class="cert-btn cert-btn--download">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ── -->
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">03 / projects</span>
+          <h2 class="section-title">Featured <span class="accent">Builds</span></h2>
+        </div>
+
+        <!-- PROJECT 1 – E-Commerce -->
+        <article class="project-card project-card--featured">
+          <div class="project-card__inner">
+
+            <!-- Info column -->
+            <div class="project-card__info">
+              <div class="project-card__meta-row">
+                <span class="project-card__index">01</span>
+                <span class="project-card__status project-card__status--live">
+                  <span class="project-card__status-dot"></span>Live
+                </span>
+                <span class="project-card__type">E-Commerce</span>
+              </div>
+
+              <h3 class="project-card__title">AlgoMage E-Commerce Platform</h3>
+              <p class="project-card__desc">
+                A sleek laptop catalog and storefront built from scratch — hand-crafted HTML, CSS, and JavaScript with zero frameworks. Fully responsive product grid, live cart system, and smooth checkout flow.
+              </p>
+
+              <ul class="project-card__features">
+                <li>Custom responsive product grid layout</li>
+                <li>Interactive "Add to Cart" with live badge count</li>
+                <li>Sliding cart drawer with quantity controls</li>
+                <li>Order summary &amp; checkout flow</li>
+              </ul>
+
+              <div class="project-card__tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Responsive</span>
+              </div>
+
+              <div class="project-card__actions">
+                <a href="https://github.com/Fiseha09" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GitHub
+                </a>
+                <a href="#" target="_blank" rel="noopener" class="btn btn--live btn--sm" id="demoCartBtn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Live Site
+                </a>
+                <button class="btn btn--ghost btn--sm btn--demo-trigger" data-demo="cart">
+                  Interactive Demo
+                </button>
+              </div>
+            </div>
+
+            <!-- Demo column -->
+            <div class="project-card__demo">
+              <div class="demo-store">
+                <div class="demo-store__bar">
+                  <div class="demo-dot demo-dot--red"></div>
+                  <div class="demo-dot demo-dot--yellow"></div>
+                  <div class="demo-dot demo-dot--green"></div>
+                  <span class="demo-store__url">algomage-store.dev</span>
+                  <div class="cart-icon" id="cartIcon" role="button" tabindex="0" aria-label="Open cart">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                  </div>
+                </div>
+                <div class="demo-store__grid" id="laptopGrid">
+                  <!-- Products injected by JS -->
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- PROJECT 2 – preXam -->
+        <article class="project-card project-card--featured project-card--alt">
+          <div class="project-card__inner">
+
+            <!-- Info column -->
+            <div class="project-card__info">
+              <div class="project-card__meta-row">
+                <span class="project-card__index">02</span>
+                <span class="project-card__status project-card__status--live">
+                  <span class="project-card__status-dot"></span>Live
+                </span>
+                <span class="project-card__type">EdTech · Bot Automation</span>
+              </div>
+
+              <h3 class="project-card__title">preXam Elite Institute</h3>
+              <p class="project-card__subtitle">Home of Elites</p>
+              <p class="project-card__desc">
+                A professional educational platform and business operation hub. Its centrepiece is a custom automated Telegram bot that manages student applications and network marketing onboarding end-to-end — zero human bottlenecks.
+              </p>
+
+              <ul class="project-card__features">
+                <li>Automated Telegram bot for application intake</li>
+                <li>Network marketing business onboarding flow</li>
+                <li>Exam prep resource library</li>
+                <li>Professional landing page &amp; branding system</li>
+              </ul>
+
+              <div class="project-card__tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Telegram Bot API</span>
+              </div>
+
+              <div class="project-card__actions">
+                <a href="https://github.com/Fiseha09" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GitHub
+                </a>
+                <a href="https://algo-mage-academics.vercel.app/" target="_blank" rel="noopener" class="btn btn--live btn--sm">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Live Site
+                </a>
+                <a href="https://t.me/preXamElite" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                  Telegram Bot
+                </a>
+              </div>
+            </div>
+
+            <!-- Demo column -->
+            <div class="project-card__demo">
+              <div class="demo-telegram">
+                <div class="demo-telegram__header">
+                  <div class="demo-tg-avatar">pX</div>
+                  <div>
+                    <p class="demo-tg-name">preXam Bot</p>
+                    <p class="demo-tg-status">● online</p>
+                  </div>
+                </div>
+                <div class="demo-telegram__chat" id="tgChat">
+                  <!-- Messages injected by JS -->
+                </div>
+                <div class="demo-telegram__input">
+                  <span class="demo-tg-placeholder">Message preXam Bot…</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">04 / contact</span>
+          <h2 class="section-title">Let's <span class="accent">Connect</span></h2>
+        </div>
+        <div class="contact__grid">
+
+          <div class="contact__form-col">
+            <form class="contact__form" id="contactForm" novalidate>
+              <div class="form-group">
+                <label for="cfName" class="form-label">Name</label>
+                <input type="text" id="cfName" name="name" class="form-input" placeholder="Your full name" required autocomplete="name" />
+                <span class="form-error" id="errName"></span>
+              </div>
+              <div class="form-group">
+                <label for="cfEmail" class="form-label">Email</label>
+                <input type="email" id="cfEmail" name="email" class="form-input" placeholder="you@example.com" required autocomplete="email" />
+                <span class="form-error" id="errEmail"></span>
+              </div>
+              <div class="form-group">
+                <label for="cfSubject" class="form-label">Subject</label>
+                <input type="text" id="cfSubject" name="subject" class="form-input" placeholder="Project / Collaboration / Question" />
+              </div>
+              <div class="form-group">
+                <label for="cfMsg" class="form-label">Message</label>
+                <textarea id="cfMsg" name="message" class="form-input form-input--textarea" placeholder="Tell me about your idea or project…" rows="5" required></textarea>
+                <span class="form-error" id="errMsg"></span>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">
+                <span class="btn__text">Send Message</span>
+                <span class="btn__icon">→</span>
+              </button>
+              <div class="form-success" id="formSuccess" aria-live="polite"></div>
+            </form>
+          </div>
+
+          <div class="contact__links-col">
+            <div class="contact__info-card">
+              <h3 class="contact__info-heading">Find Me Online</h3>
+              <p class="contact__info-text">I am always open to discussing new projects, collaborations, or building something impactful together.</p>
+              <div class="contact__links">
+                <a href="https://github.com/Fiseha09" target="_blank" rel="noopener" class="contact__link">
+                  <span class="contact__link-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </span>
+                  <span>GitHub — AlgoMage Projects</span>
+                  <span class="contact__link-arrow">↗</span>
+                </a>
+                <a href="mailto:fisehabelete57@gmail.com" class="contact__link">
+                  <span class="contact__link-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </span>
+                  <span>Email — Direct Contact</span>
+                  <span class="contact__link-arrow">↗</span>
+                </a>
+                <a href="https://t.me/Fiseha70" target="_blank" rel="noopener" class="contact__link">
+                  <span class="contact__link-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                  </span>
+                  <span>Telegram — AlgoMage</span>
+                  <span class="contact__link-arrow">↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__logo">
+        <span class="nav__logo-bracket">&lt;</span>AlgoMage<span class="nav__logo-bracket">/&gt;</span>
+      </span>
+      <p class="footer__copy">&copy; <span id="footerYear"></span> Fiseha Belete. All rights reserved.</p>
+      <a href="#home" class="footer__back-top" aria-label="Back to top">↑</a>
+    </div>
+  </footer>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cartModal" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+    <div class="cart-modal__overlay" id="cartOverlay"></div>
+    <div class="cart-modal__drawer">
+      <div class="cart-modal__header">
+        <h2 class="cart-modal__title">Cart</h2>
+        <button class="cart-modal__close" id="cartClose" aria-label="Close cart">&times;</button>
+      </div>
+      <div class="cart-modal__items" id="cartItems">
+        <p class="cart-modal__empty">Your cart is empty.</p>
+      </div>
+      <div class="cart-modal__footer">
+        <div class="cart-modal__total">Total: <span id="cartTotal">$0.00</span></div>
+        <!-- Total is kept in sync by JS on every cart update -->
+        <button class="btn btn--primary btn--full" id="checkoutBtn">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
