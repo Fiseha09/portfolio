@@ -379,7 +379,7 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     cartBadge.textContent = totalItems();
     if (!totalItems()) {
       cartBadge.classList.remove('visible');
-      cartTotalEl.textContent = '$0.00';
+      cartTotalEl.textContent = '$10,000.00 Earned Through Projects';
     }
     updateCartUI();
   });
