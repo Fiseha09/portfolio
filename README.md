@@ -9,7 +9,7 @@ Welcome to my personal developer portfolio repository! I'm a passionate software
 - 🚀 Passionate about full-stack web development and learning modern technologies.
 - 💡 Interested in building scalable web applications, clean user interfaces, and solving complex problems.
 - 🌱 Currently expanding my skills in modern frontend frameworks and backend integration.
-- 📫 How to reach me: **[Your Email]** | **[Your LinkedIn Profile]**
+- 📫 How to reach me: **fisehabelete57@gmail.com ** | **[Your LinkedIn Profile]**
 
 ---
 
@@ -29,8 +29,10 @@ Here are a few highlights of what I've been working on:
 
 | Project Name | Description | Tech Stack | Live Demo |
 | :--- | :--- | :--- | :--- |
-| **AlgoMage Commerce** | Full-stack e-commerce app with cart and checkout workflows. | Node.js, Express, MongoDB | [Live Demo](#) |
+| **AlgoMage Commerce** | Full-stack e-commerce app with cart and checkout workflows. | Node.js, Express, MongoDB | [Live Demo](https://fiseha09.github.io/AlgoMage-Commerce/) |
 | **Portfolio Website** | My personal website showcasing my skills and journey. | HTML, CSS, JavaScript | [Live Demo](#) |
+| **prexam-elite website** | Full-stack educational website all university fresh man resourses and checkout workflows. | Node.js, Express, MongoDB | [Live Demo](https://algo-mage-academics.vercel.app/) |
+
 
 ---
 
