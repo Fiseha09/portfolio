@@ -11,12 +11,14 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// MySQL Connection Pool
+// MySQL Connection Pool (Updated for Cloud Databases)
 const db = mysql.createPool({
   host: process.env.DB_HOST || 'localhost',
   user: process.env.DB_USER || 'root',
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME || 'algomage_db',
+  port: process.env.DB_PORT || 3306, // Custom port for cloud databases
+  ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : undefined, // SSL support for Aiven/cloud DBs
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
@@ -120,5 +122,5 @@ app.get('/api/contact', (req, res) => {
 
 // Start Server
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });
