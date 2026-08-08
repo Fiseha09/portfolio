@@ -508,7 +508,7 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 })();
 
 /* ============================================================
-   8. CONTACT FORM — Client-side validation & submit
+   8. CONTACT FORM — Client-side validation & API submit
    ============================================================ */
 (function initContactForm() {
   const form       = $('#contactForm');
@@ -521,6 +521,9 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   const errEmail   = $('#errEmail');
   const errMsg     = $('#errMsg');
   const successEl  = $('#formSuccess');
+
+  // Backend API URL
+  const API_URL = 'http://localhost:5000/api/contact';
 
   function validate() {
     let valid = true;
@@ -567,7 +570,6 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   [nameInput, emailInput, msgInput].forEach(input => {
     input.addEventListener('blur', () => validate());
     input.addEventListener('input', () => {
-      /* Clear error as soon as user starts correcting */
       input.classList.remove('error');
       const errEl = {
         [nameInput.id]:  errName,
@@ -578,7 +580,8 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     });
   });
 
-  form.addEventListener('submit', e => {
+  /* REAL API SUBMISSION VIA FETCH */
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     if (!validate()) return;
 
@@ -587,23 +590,39 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     const btnIcon   = submitBtn.querySelector('.btn__icon');
 
     submitBtn.disabled = true;
-    btnText.textContent = 'Sending…';
-    btnIcon.textContent = '⟳';
+    if (btnText) btnText.textContent = 'Sending…';
+    if (btnIcon) btnIcon.textContent = '⟳';
 
-    /* Simulate async send (replace with real fetch/emailjs as needed) */
-    setTimeout(() => {
-      submitBtn.disabled  = false;
-      btnText.textContent = 'Send Message';
-      btnIcon.textContent = '→';
-      form.reset();
-      successEl.textContent = '✅ Message sent! I\'ll get back to you soon.';
-      successEl.classList.add('visible');
-      setTimeout(() => successEl.classList.remove('visible'), 5000);
-    }, 1600);
+    try {
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: nameInput.value.trim(),
+          email: emailInput.value.trim(),
+          message: msgInput.value.trim()
+        }),
+      });
+
+      if (response.ok) {
+        form.reset();
+        successEl.textContent = '✅ Message sent! I\'ll get back to you soon.';
+        successEl.classList.add('visible');
+        setTimeout(() => successEl.classList.remove('visible'), 5000);
+      } else {
+        const errorData = await response.json();
+        alert(`Server Error: ${errorData.error || 'Failed to send message.'}`);
+      }
+    } catch (error) {
+      console.error('Fetch error:', error);
+      alert('Unable to connect to the backend server. Make sure node server.js is running.');
+    } finally {
+      submitBtn.disabled = false;
+      if (btnText) btnText.textContent = 'Send Message';
+      if (btnIcon) btnIcon.textContent = '→';
+    }
   });
 })();
-
-
 /* ============================================================
    9. SMOOTH ANCHOR SCROLL (offset for fixed nav)
    ============================================================ */
